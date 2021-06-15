@@ -1,1 +1,203 @@
-{\rtf1}
+/* modal */
+body {
+  color: #333333;
+  font-family: "Helvetica", arial;
+  height: 1500px;
+}
+
+.center {
+  text-align: center;
+}
+.modal:target:before {
+  display: none;
+}
+.modal:before {
+  content: "";
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+.modal .modal-dialog {
+  background: #fefefe;
+  border: #333333 solid 1px;
+  border-radius: 5px;
+  margin-left: -200px;
+  position: fixed;
+  left: 50%;
+  z-index: 11;
+  width: 360px;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  top: 20%;
+}
+.modal:target .modal-dialog {
+  top: -100%;
+  -webkit-transform: translate(0, -500%);
+  -ms-transform: translate(0, -500%);
+  transform: translate(0, -500%);
+}
+.modal-body {
+  padding: 5px;
+  text-align: center;
+}
+.modal-header,
+.modal-footer {
+  padding: 13px 0 0 0;
+  padding-top: 13px;
+}
+.modal-header {
+  border-bottom: gainsboro solid 1px;
+}
+.modal-header h2 {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+.modal-footer {
+  border-top: gainsboro solid 1px;
+  text-align: right;
+}
+input {
+  outline: none;
+  height: 23px;
+  border: 1px solid #ccc9c9;
+}
+.marginTop10px {
+  margin-top: 10px;
+}
+.errCont {
+  background-color: #fff6f6;
+  padding: 5px 3px 11px 0px;
+  border-radius: 0.28571429rem;
+  width: 100%;
+  text-align: left;
+  box-shadow: 0 0 0 1px #e0b4b4 inset, 0 0 0 0 transparent;
+}
+.li {
+  color: #ae5755;
+  font-size: 13px;
+}
+.colorWhite {
+  color: white;
+}
+/* modal */
+/* btn */
+.span:hover {
+  color: white !important;
+}
+.span {
+  color: black !important;
+}
+.btn {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 12px 27px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  height: 57px;
+
+  color: #999999;
+  background: #ffffff;
+  border: 3px solid #999999;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+}
+
+.span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  transition: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+:active,
+:hover,
+:focus {
+  outline: 0 !important;
+  outline-offset: 0;
+}
+::before,
+::after {
+  position: absolute;
+  content: "";
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 3px !important;
+  height: 39px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0px 25px 15px;
+  min-width: 150px;
+}
+.btn span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: -11.2px;
+  width: 100%;
+  padding: 15px 20px;
+  transition: 0.3s;
+}
+.btn {
+  padding: 7px;
+  border: 1px solid black;
+  color: white !important;
+}
+
+/* 2.
+-filled-slide-up */
+
+/*--- btn-2 ---*/
+.btn-2::before {
+  background-color: rgb(28, 31, 30);
+  transition: 0.3s ease-out;
+}
+
+/* 6. hover-slide-down */
+
+.btn.hover-slide-left::before {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 0%;
+}
+.btn.hover-slide-left:hover::before {
+  width: 100%;
+  color: white !important;
+}
+
+/* btn */

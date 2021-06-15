@@ -4,9 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
 <body>
+<div class="modal" id="modal-one" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-header center">
+             <h2>Country Name or Country Code</h2>
+
+        </div>
+        <div class="modal-body">
+            <p>Please write country code or Country Name</p>
+            <br>
+
+            <input type="text" id="CcCn"><!-- CcCn =C=Country; c = code; C = Country; n = name; = CountrycodeCountryname-->
+            <div class="errCont marginTop10px" id='BON' style="display: none">  <p class="marginTop10px colorWhite">     <ul class="list" id="err">
+        <!-- BON = block or none (its talking about display) -->
+        
+              </ul>         </p></div>
+        </div>
+        <div class="modal-footer">  <a class="btn-2 hover-slide-left btn" href=""><span class="span"  id="submit">Done</span></a>
+
+
+        </div>
+    </div>
+</div>
     <script src="./js/index.js"></script>
 </body>
 </html>
+ <!-- style="display: none;" -->
