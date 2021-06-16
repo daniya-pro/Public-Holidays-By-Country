@@ -43,14 +43,15 @@ document.getElementById("submit").addEventListener("click", (e) => {
     modal.style.display = "none";
     card.style.display = "block";
     fetch(
-      `https://calendarific.com/api/v2/holidays?&api_key=73540fb60004f60f00fa294da35161370f6b6e47&country=${
+      `https://calendarific.com/api/v2/holidays?api_key=73540fb60004f60f00fa294da35161370f6b6e47&country=${
         Input.value
       }&year=${new Date().getFullYear()}`
     ).then((d) =>
       d.json().then((data) => {
-        data.response.holidays.forEach((e) => {
-          console.log(e);
-          card.innerHTML += `<div class="maindiv Card">
+        if (Array.isArray(data.response.holidays)) {
+          data.response.holidays.forEach((e) => {
+            console.log(e);
+            card.innerHTML += `<div class="maindiv Card">
 
 <div class="eachdiv">
 
@@ -66,7 +67,8 @@ document.getElementById("submit").addEventListener("click", (e) => {
 </div>
 
 </div>`;
-        });
+          });
+        }
       })
     );
   }
