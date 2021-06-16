@@ -1,7 +1,7 @@
 var countries = [];
 
 fetch(
-  "https://calendarific.com/api/v2/countries?api_key=6fb1da00460d4eee6bb370a48c0aa06f5aed0aa0"
+  "https://calendarific.com/api/v2/countries?api_key=dcb65b2ca39f72cc26a718063d6852a2ef594844"
 ).then((d) =>
   d.json().then((data) => {
     data.response.countries.forEach((e) => {
@@ -17,6 +17,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
   let err = document.getElementById("err");
   let BON = document.getElementById("BON");
   let modal = document.getElementById("modal-one");
+  let card = document.getElementById("card");
   //elements
   //variables
   var flag;
@@ -40,7 +41,33 @@ document.getElementById("submit").addEventListener("click", (e) => {
     BON.style.display = "none";
     err.innerHTML = "";
     modal.style.display = "none";
+    card.style.display = "block";
+    fetch(
+      `https://calendarific.com/api/v2/holidays?&api_key=dcb65b2ca39f72cc26a718063d6852a2ef594844&country=${
+        Input.value
+      }&year=${new Date().getFullYear()}`
+    ).then((d) =>
+      d.json().then((data) => {
+        data.response.holidays.forEach((e) => {
+          console.log(e);
+          card.innerHTML += `<div class="maindiv Card">
 
-    // fetch("https://https://calendarific.com/api/v2/holidays?&api_key=6fb1da00460d4eee6bb370a48c0aa06f5aed0aa0&country=US&");
+<div class="eachdiv">
+
+    <h3> ${e.name} </h3><br/>
+    <p>
+    <strong>Date : </strong>${e.date.iso}
+    
+    </p> <br/>
+    <p><strong>Country : </strong> ${e.country.name} </p> <br/>
+    <p><strong> Cities That Celebrates ${e.name} : </strong> ${e.locations} </p> <br/>
+    <p><strong>Description : </strong><span class="description">${e.description}</span></p> <br/>
+
+</div>
+
+</div>`;
+        });
+      })
+    );
   }
 });
