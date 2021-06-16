@@ -27,6 +27,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
   countries.forEach((e) => {
     if (e.CountryName.toLowerCase() === Input.value) {
       flag = true;
+      cc = e.CC;
     } else if (e.CC.toLowerCase() === Input.value) {
       flag = true;
 
@@ -45,6 +46,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
     err.innerHTML = "";
     modal.style.display = "none";
     card.style.display = "block";
+    console.log(cc);
     fetch(
       `https://calendarific.com/api/v2/holidays?api_key=73540fb60004f60f00fa294da35161370f6b6e47&country=${cc}&year=${new Date().getFullYear()}`
     ).then((d) =>
