@@ -1,7 +1,7 @@
 var countries = [];
 
 fetch(
-  "https://calendarific.com/api/v2/countries?api_key=dcb65b2ca39f72cc26a718063d6852a2ef594844"
+  "https://calendarific.com/api/v2/countries?api_key=73540fb60004f60f00fa294da35161370f6b6e47"
 ).then((d) =>
   d.json().then((data) => {
     data.response.countries.forEach((e) => {
@@ -43,7 +43,7 @@ document.getElementById("submit").addEventListener("click", (e) => {
     modal.style.display = "none";
     card.style.display = "block";
     fetch(
-      `https://calendarific.com/api/v2/holidays?&api_key=dcb65b2ca39f72cc26a718063d6852a2ef594844&country=${
+      `https://calendarific.com/api/v2/holidays?&api_key=73540fb60004f60f00fa294da35161370f6b6e47&country=${
         Input.value
       }&year=${new Date().getFullYear()}`
     ).then((d) =>
